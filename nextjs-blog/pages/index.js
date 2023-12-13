@@ -1,20 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-const fruitElements = [];
 
 const fruitArray = ["banana","apple","orange"];
 for (const property in fruitArray) {
-  fruitElements.push(
-    <div key={property} className={styles.card}>
-        <h3>{`Array element ${property}`}</h3>
-        <p>{`Property: ${fruitArray[property]}`}</p>
-      </div>
-  );
+  console.log(property + " => " + fruitArray[property] );
 }
-
-// Get the user agent string
-const userAgent = navigator.userAgent;
 
 export default function Home() {
   return (
@@ -29,13 +20,8 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-      <h3>From a table of ["banana","apple","orange"], we have another one player when iterating the table with a for...in in older version of FireFox (for instance FF 78.11)</h3>
-      <p>Current user agent: ${userAgent}</p>
-
-        <div className={styles.grid}>
-          {/* Affichage des éléments générés par la boucle for...of */}
-          {fruitElements}
-        </div>
+        <h3>From a table of ["banana","apple","orange"], we have another one player when iterating the table with a for...in in older version of FireFox (for instance FF 78.11)</h3>
+        <h3>See ther issue in browser JS console</h3>
 
       </main>
 
